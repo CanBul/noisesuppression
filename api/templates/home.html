@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename = 'index.css')}}">      
+    
+    <title>Audio Noise Suppression</title>
+</head>
+<body>
+    <div class="container" id="contain">
+
+        <header class="header">
+            <div class="header__logo">
+                <h1 style="color: white; text-align: center;">Audio Noise Suppression</h1>
+            </div>            
+        </header>
+
+        <div class="main">
+            <h2 class="head">Please select a noisy wav file from your computer</h2>
+            <form method="POST" class='mic' id="form">  
+                <input type="file" accept="audio/wav" capture id="recorder" class="file">
+                    
+                <button type="submit" role="button" class="btn" id="submit">Denoise sound file</button> 
+                <p id="noisy">Noisy Sound</p>
+                <div class="recordingsList" id="recordingsList">
+                </div> 
+                <div class="result" id="result-section">                    
+                    
+                </div>        
+            </form>    
+        </div>        
+    </div>    
+
+    <div id="loading"><img src="{{url_for('static', filename = 'loader_small.gif')}}" alt="loader"></div>
+    
+    <script src="{{url_for('static', filename = 'main.js')}}"></script>      
+</body>
+</html>
