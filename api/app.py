@@ -6,7 +6,7 @@ current_path = os.path.dirname(os.path.realpath(__file__))
 main_path = os.path.dirname(current_path)
 sys.path.insert(0, main_path)
 
-from main import Nsnet2
+from main.nsnet2 import Nsnet2
 from main.utils.convert_to_spectogram import rgb_spectrogram_image
 
 

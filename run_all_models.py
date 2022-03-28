@@ -1,9 +1,11 @@
-from main import  Nsnet2, RNNoise, FullSubnet
+from main.fullsubnet import   FullSubnet
+from main.nsnet2 import Nsnet2
+from main.rnnoise import RNNoise
 import os
 
 def run_all_models():
 
-    models = [Nsnet2, RNNoise, FullSubnet]
+    models = [Nsnet2, FullSubnet, RNNoise]
     main_path = os.path.dirname(os.path.realpath(__file__))
     NOISY_DATA_DIR = os.path.join(main_path, "data/noisy_data")
       

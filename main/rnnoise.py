@@ -3,8 +3,8 @@ import numpy as np
 import soundfile as sf
 import os
 import librosa
-from .utils.frame_generator import frame_generator
-from .utils.read_wave import read_wave
+from main.utils.frame_generator import frame_generator
+from main.utils.read_wave import read_wave
 
 
 class RNNoise:
@@ -12,7 +12,7 @@ class RNNoise:
         lib_path = ctypes.util.find_library(("rnnoise"))
         if (not("/" in lib_path)):
             lib_path = (os.popen('ldconfig -p | grep '+lib_path).read().split('\n')[0].strip().split(" ")[-1] or ("/usr/local/lib/"+lib_path))
-
+        
         self.lib = ctypes.cdll.LoadLibrary(lib_path)
         self.lib.rnnoise_process_frame.argtypes = [ctypes.c_void_p,ctypes.POINTER(ctypes.c_float),ctypes.POINTER(ctypes.c_float)]
         self.lib.rnnoise_process_frame.restype = ctypes.c_float
@@ -58,6 +58,9 @@ class RNNoise:
     
     def __repr__(self):
         return 'rnnoise'
+
+
+
 
 
 
