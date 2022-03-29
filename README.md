@@ -16,7 +16,9 @@ python run_api.py
 
 should start a flask development server. You can select noisy wav files from your computer and denoise them using the default Nsnet2 model. 
 
-To denoise everyfile under data/noisy_data using fullsubnet and nsnet2 models:
+All files under data/noisy_data are already denoised. You can find those files specific to each model under results directory. 
+
+To denoise every file under data/noisy_data using fullsubnet and nsnet2 models:
 
 ```
 python run_all_models.py
