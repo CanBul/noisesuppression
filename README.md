@@ -1,8 +1,9 @@
 NoiseSuppression is a bundle of three noise suppression algorithms, namely FullSubnet, RNNoise and Nsnet2.
 
-To be able to use NoiseSuppression, a conda environment is needed to be created and activated.
+To be able to use NoiseSuppression, a conda environment is needed to be created and activated. After cloning the repo,
 
 ```
+cd noisesuppression
 conda env create -f environment.yml
 conda activate noisesuppression
 
@@ -10,7 +11,6 @@ conda activate noisesuppression
 
 If you want to use the UI
 ```
-cd noisesuppression
 python run_api.py
 ```
 
