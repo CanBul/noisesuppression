@@ -13,6 +13,14 @@ from main.nsnet2 import Nsnet2
 
 
 def run_one_model(denoiser, input_file_path, output_directory):
+    """
+    Runs a model to denoise the wav file given. Prints inference time.
+
+    Args:
+        denoiser (instance of a model): FullSubnet, RNNoise or Nsnet2
+        source_file_path (str): absolute path of noisy wav file
+        output_directory (str): output directory of denoised file
+    """
 
     start = time.time()
     
@@ -25,6 +33,8 @@ def run_one_model(denoiser, input_file_path, output_directory):
 
 
 if __name__ == "__main__":
+
+    #Arbitrary test files and paths
     
     file_name = "Speaker_M2_Noise_Subway_Station.wav"
     test_file_path = os.path.join(main_path, f'data/noisy_data/{file_name}')
@@ -44,6 +54,7 @@ if __name__ == "__main__":
 
         run_one_model(denoiser, test_file_path, output_directory ) 
 
+        #Calculates PESQ score
         calculate_pesq(clean_file_path, os.path.join(output_directory, f"{file_name}")) 
 
         print('-----------------')

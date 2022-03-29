@@ -2,7 +2,8 @@ import contextlib
 import wave
 
 def read_wave(path):
-    """Reads a .wav file.
+    """
+    Reads a .wav file.
     Takes the path, and returns (PCM audio data, sample rate).
     """
     with contextlib.closing(wave.open(path, 'rb')) as wf:

@@ -8,13 +8,13 @@ conda activate noisesuppression
 
 ```
 
-If you want to use the UI, after
+If you want to use the UI
 ```
 cd noisesuppression
 python run_api.py
 ```
 
-a flask development server should start. You can select noisy wav files from your computer and denoise them using the default Nsnet2 model. 
+should start a flask development server. You can select noisy wav files from your computer and denoise them using the default Nsnet2 model. 
 
 To denoise everyfile under data/noisy_data using fullsubnet and nsnet2 models:
 
@@ -27,6 +27,15 @@ If you also want to use the RNNoise model, it needs to be cloned from its github
 https://github.com/xiph/rnnoise
 
 
+
+ISSUES:
+
+There is an installment problem of PESQ library directly. Therefore, it is not included in environment.yml. It is only required if you run tests/run_test.py
+
+To be able install pesq, you need c compiler and cython. After installing them, you can
+```
+pip install pesq
+```
 
 
 

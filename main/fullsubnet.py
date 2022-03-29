@@ -5,7 +5,11 @@ import shutil
 
 
 class FullSubnet:
+    """
+    A class that uses FullSubnet as the model to denoise wav files.
+    """
     def __init__(self):
+        
         current_path = os.path.dirname(os.path.realpath(__file__))
         subnet_path = "models/fullsubnet"
 
@@ -16,6 +20,16 @@ class FullSubnet:
         self.tmp_output_dir = os.path.join(os.path.dirname(current_path), "data/fullsubnet_results")
     
     def denoise_single_file(self, source_file_path, output_directory):
+        """
+        Main method to denoise the wav file. 
+
+        Args:
+            source_file_path (str): absolute path of noisy wav file
+            output_directory (str): output directory of denoised file
+
+        Output file name will be same as the input file name.
+
+        """
 
         try:          
             
