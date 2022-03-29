@@ -6,9 +6,10 @@ current_path = os.path.dirname(os.path.realpath(__file__))
 main_path = os.path.dirname(current_path)
 sys.path.insert(0, main_path)
 
-from metrics.pesq_calculater import calculate_pesq
-from main import FullSubnet, RNNoise, Nsnet2
-
+from metrics.pesq_calculator import calculate_pesq
+from main.fullsubnet import FullSubnet
+from main.rnnoise import RNNoise
+from main.nsnet2 import Nsnet2
 
 
 def run_one_model(denoiser, input_file_path, output_directory):
@@ -29,9 +30,9 @@ if __name__ == "__main__":
     test_file_path = os.path.join(main_path, f'data/noisy_data/{file_name}')
     clean_file_path = os.path.join(main_path, 'data/clean_data/Speaker_M2_Original.wav')
 
-    models = [FullSubnet, RNNoise, Nsnet2]
+    MODELS = [FullSubnet, RNNoise, Nsnet2]
 
-    for model in models:
+    for model in MODELS:
     
         denoiser = model()
 

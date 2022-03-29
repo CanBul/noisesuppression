@@ -3,6 +3,11 @@ import numpy as np
 import soundfile as sf
 import os
 import librosa
+import sys
+current_path = os.path.dirname(os.path.realpath(__file__))
+main_path = os.path.dirname(current_path)
+sys.path.insert(0, main_path)
+
 from main.utils.frame_generator import frame_generator
 from main.utils.read_wave import read_wave
 
@@ -36,7 +41,7 @@ class RNNoise:
         
 
         target_sr = 48000
-        temp_file = './data/test.wav'
+        temp_file = './test.wav'
 
         sound, _ = librosa.load(path=source_file_path, sr=target_sr)
         sf.write(file=temp_file, data=sound, samplerate=target_sr)

@@ -5,7 +5,7 @@ import os
 
 def run_all_models():
 
-    models = [Nsnet2, FullSubnet, RNNoise]
+    models = [Nsnet2, FullSubnet]
     main_path = os.path.dirname(os.path.realpath(__file__))
     NOISY_DATA_DIR = os.path.join(main_path, "data/noisy_data")
       
