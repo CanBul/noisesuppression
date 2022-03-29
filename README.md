@@ -38,8 +38,7 @@ pip install pesq
 ```
 
 
-
-
+Papers of the models used can be found under docs directory.
 
 
 
